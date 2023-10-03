@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tugas 4 Pemrograman Web A - 5025221280 Arya Gading</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="heading">
+        <h1>Form Registrasi</h1>
+        <p>Isi Form dibawah ini untuk registrasi perkuliahan</p>
+      </div>
+      <div class="form-container">
+        <form action="#" autocomplete="off">
+          <label for="nama" class="form-label">Nama</label>
+          <input type="text" name="nama" id="nama" class="text-input" />
+          <div class="suggestion" id="suggestion-name"></div>
+          <label for="nrp" class="form-label">NRP</label>
+          <input type="text" name="nrp" id="nrp" class="text-input" />
+          <label for="matkul" class="form-label">Mata Kuliah</label>
+          <select name="matkul" class="select-input" id="matkul">
+            <option value="pemrograman-web">Pemrograman Web</option>
+            <option value="pemrograman-berorientasi-obyek">
+              Pemrograman Berorientasi Obyek
+            </option>
+            <option value="pemrograman-mobile">
+              Pemrograman Perangkat Bergerak
+            </option>
+            <option value="KPPL">Konsep Pengembangan Perangkat Lunak</option>
+            <option value="KKA">Konsep Kecerdasan Artifisial</option>
+            <option value="Dasprog">Dasar Pemrograman</option>
+          </select>
+          <label for="dosen" class="form-label">Dosen</label>
+          <input type="text" name="dosen" id="dosen" class="text-input" />
+          <div class="suggestion" id="suggestion-dosen"></div>
+          <button class="btn-submit" id="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+  <script>
+    const nama = document.getElementById("nama");
+    const nrp = document.getElementById("nrp");
+    const dosen = document.getElementById("dosen");
+    const matkul = document.getElementById("matkul");
+
+    const btn = document.getElementById("submit");
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (nama.value === "" || nrp.value === "" || dosen.value === "") {
+        alert("Data tidak boleh kosong");
+      } else {
+        alert("Data berhasil dikirim");
+        nama.value = "";
+        nrp.value = "";
+        dosen.value = "";
+        matkul.selectedIndex = 0;
+      }
+    });
+  </script>
+</html>
